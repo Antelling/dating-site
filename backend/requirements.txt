@@ -1,0 +1,15 @@
+#django modules
+django
+djangorestframework
+markdown
+django-filter
+django-allauth
+
+#ml
+numpy
+scipy
+scikit-learn
+tensorflow
+h5py
+keras
+
