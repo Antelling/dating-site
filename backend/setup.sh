@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 touch DEV;
-cat "fjdkfjsdhkdfj&*^&^*)()" > SECRET;
+echo "fjdkfjsdhkdfj&*^&^*)()" > SECRET;
 
 apt-get install python3-pip python-dev;
 pip3 install -r requirements.txt;
