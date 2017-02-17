@@ -29,9 +29,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth'
+    'allauth',
+    'rest_auth',
+    'rest_auth.registration'
 ]
 
 MIDDLEWARE_CLASSES = [
