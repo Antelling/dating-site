@@ -12,4 +12,6 @@ python3 setup.py install
 
 sudo pip3 install git+https://github.com/farizrahman4u/seq2seq.git
 
-echo "done"
+python3 manage.py migrate
+
+python3 manage.py runserver 0.0.0.0:80
