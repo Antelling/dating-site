@@ -19,6 +19,15 @@ else:
 
 ALLOWED_HOSTS = [".cloudapp.net", "127.0.0.1"]
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Application definition
 
@@ -33,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'allauth',
+    'allauth.account',
     'rest_auth',
     'rest_auth.registration',
     'personality_test'
