@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'allauth',
     'rest_auth',
-    'rest_auth.registration'
+    'rest_auth.registration',
+    'personality_test'
 ]
 
 MIDDLEWARE_CLASSES = [
