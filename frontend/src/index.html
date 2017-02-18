@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dating-Site - Authentication</title>
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/application.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1 id="title">Dating-Site</h1>
+    <div id="application">
+      <p id="authenticationError" v-if="authentication.error != null">{{ authentication.error }}</p>
+      <div id="login" class="standardForm" v-on:keyup.enter="submitLogin">
+        <h1 class="authTitle">Login</h1>
+        <input type="text" v-model=" authentication.login.username "placeholder="Username">
+        <input type="password" v-model=" authentication.login.password "placeholder="Password">
+        <input type="text" v-model=" authentication.login.email "placeholder="Email">
+      </div>
+      <div id="register" class="standardForm" v-on:keyup.enter="submitRegister">
+        <h1 class="authTitle">Register</h1>
+        <input type="text" v-model=" authentication.register.username "placeholder="Username">
+        <input type="password" v-model=" authentication.register.password1 "placeholder="Password">
+        <input type="password" v-model=" authentication.register.password2 "placeholder="Password">
+        <input type="text" v-model=" authentication.register.email "placeholder="Email">
+      </div>
+      <input type="button" value="Get Username (if authenticated)" v-on:click="test">
+    </div>
+  </body>
+</html>
