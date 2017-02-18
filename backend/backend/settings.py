@@ -4,10 +4,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
-
-# make a file called secret and put a line of gibberish in it
-# eg wqv)@ijs(m=lll-l7!lllrl8bj^lsz2^#+8&xd4%n1dr2mymo*
 SECRET_KEY = open(os.path.join(BASE_DIR, "SECRET")).read()
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -32,6 +28,7 @@ AUTHENTICATION_BACKENDS = (
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,7 +47,10 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 MIDDLEWARE_CLASSES = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
