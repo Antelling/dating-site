@@ -39,7 +39,7 @@ def five_parts(request):
         "emotional_stability": 0,
         "imagination": 0
     }
-    if request.POST.response:
+    if "response" in request.POST:
         for i, question in enumerate(request.POST.response):
             negative, key = extract(map[i])
             if negative:
