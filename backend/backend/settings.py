@@ -4,10 +4,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
-
-# make a file called secret and put a line of gibberish in it
-# eg wqv)@ijs(m=lll-l7!lllrl8bj^lsz2^#+8&xd4%n1dr2mymo*
 SECRET_KEY = open(os.path.join(BASE_DIR, "SECRET")).read()
 
 # SECURITY WARNING: don't run with debug turned on in production!
