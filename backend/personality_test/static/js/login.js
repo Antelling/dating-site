@@ -10,17 +10,12 @@ window.onload = () => {
         error: null,
         key: "",
         csrf_token: "",
-        register: {
-          username: "",
-          password1: "",
-          password2: "",
-          email: ""
-        },
-        login: {
-          username: "",
-          password: "",
-          email: ""
-        }
+        register: {username: "",password1: "",password2: "",email: ""},
+        login: {username: "",password: "",email: ""},
+        displayLogin: true
+      },
+      user: {
+        username: ""
       },
       baseUrl: "http://localhost:8080/"
     },

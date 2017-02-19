@@ -14,8 +14,6 @@ body {
 }
 
 #application {
-  display: flex;
-  flex-direction: column;
   width: 40%;
   text-align: center;
 }
@@ -29,14 +27,9 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 1em 0;
-  padding: 1em;
+  margin: 2em 0;
   justify-content: center;
   align-items: center;
-}
-
-.authTitle {
-  font-size: 1.3em;
 }
 
 .standardForm {
@@ -51,10 +44,20 @@ body {
   border-bottom: thin solid #FFCDD2;
   color: #FFCDD2;
   background: #F44336;
+  font-size: 1.4em;
+}
+
+.stdButton {
+  border: thin solid #FFCDD2;
+  border-radius: 2em;
+  padding: 0.5em;
   font-size: 1.2em;
 }
 
-
+.stdButton:hover {
+  cursor: hand;
+  cursor: pointer;
+}
 
 
 
