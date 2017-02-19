@@ -56,6 +56,12 @@ from corsheaders.defaults import default_headers
 
 CORS_ALLOW_HEADERS = default_headers
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+    )
+}
+
 MIDDLEWARE_CLASSES = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
