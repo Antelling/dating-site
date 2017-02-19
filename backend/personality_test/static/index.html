@@ -5,6 +5,7 @@
     <title>Dating-Site - Authentication</title>
     <script src="js/vue.js"></script>
     <script src="js/axios.min.js"></script>
+    <script src="js/cookies.js"></script>
     <script src="js/application.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
@@ -27,7 +28,6 @@
         <input type="password" v-model=" authentication.register.password2 "placeholder="Password">
         <input type="text" v-model=" authentication.register.email "placeholder="Email">
       </div>
-      <input type="button" value="Get Username (if authenticated)" v-on:click="test">
     </div>
   </body>
 </html>

@@ -13,7 +13,7 @@ if os.path.isfile(os.path.join(BASE_DIR, "DEV")):
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = [".cloudapp.net", "127.0.0.1"]
+ALLOWED_HOSTS = [".cloudapp.net", "127.0.0.1", "localhost"]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -133,6 +133,7 @@ USE_TZ = True
 
 # Set cookie and header names for CSRF.
 CSRF_COOKIE_NAME = "XSRF-TOKEN"
+CSRF_HEADER_NAME = "X-XSRF-TOKEN"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
