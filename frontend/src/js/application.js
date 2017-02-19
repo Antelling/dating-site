@@ -63,6 +63,8 @@ window.onload = () => {
           this.authentication.error = null;
           this.authentication.key = response.data.key;
           document.cookie = "key=" + response.data.key;
+          alert("ran");
+          console.log(response.headers);
           console.log("Authenticated. Cookies set to: " + document.cookie);
         }).catch(err => {
           this.handle("Error with registration. Please try again.")

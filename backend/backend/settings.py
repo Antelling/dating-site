@@ -49,6 +49,12 @@ SITE_ID = 1
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_EXPOSE_HEADERS = ["X-CSRFToken"]
+
+from corsheaders.defaults import default_headers
+
+CORS_ALLOW_HEADERS = default_headers
+
 MIDDLEWARE_CLASSES = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
