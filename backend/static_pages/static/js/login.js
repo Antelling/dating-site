@@ -17,7 +17,7 @@ window.onload = () => {
       user: {
         username: ""
       },
-      baseUrl: "http://localhost:8080/"
+      baseUrl: "http://localhost/"
     },
     methods: {
       submitLogin: function() {
