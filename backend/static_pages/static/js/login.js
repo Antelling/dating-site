@@ -3,7 +3,7 @@ window.onload = () => {
     el: "#application",
     data: {
       customAxios: axios.create({
-        transformRequest:function(data) {var str = [];for(var p in data) {if (data.hasOwnProperty(p) && data[p]) {str.push(encodeURIComponent(p) + "=" + encodeURIComponent(data[p]));}}console.log(str.join("&"));return str.join("&");},
+        transformRequest:function(data) {var str = [];data.csrfmiddlewaretoken=docCookies.getItem("XSRF-TOKEN");for(var p in data) {if (data.hasOwnProperty(p) && data[p]) {str.push(encodeURIComponent(p) + "=" + encodeURIComponent(data[p]));}}return str.join("&");},
         headers: { "Content-Type" : "application/x-www-form-urlencoded" }
       }),
       authentication: {
@@ -25,7 +25,6 @@ window.onload = () => {
           this.authentication.error = "Please fill all fields."
           return;
         }
-        this.authentication.login.csrfmiddlewaretoken = docCookies.getItem("XSRF-TOKEN")
         this.customAxios({
           method: 'post',
           url: this.baseUrl + "rest-auth/login/",
@@ -35,6 +34,7 @@ window.onload = () => {
           console.log(response);
           // window.location = "/static/dashboard.html"
         }).catch(err => {
+          console.log(err);
           this.handle("Error with authenticating. Please try again.")
         });
       },
@@ -44,7 +44,6 @@ window.onload = () => {
           this.authentication.error = "Please fill all fields."
           return;
         }
-        this.authentication.register.csrfmiddlewaretoken = docCookies.getItem("XSRF-TOKEN")
         this.customAxios({
           method: 'post',
           url: this.baseUrl + "rest-auth/registration",
@@ -52,6 +51,7 @@ window.onload = () => {
         }).then(response => {
           this.authentication.error = null;
         }).catch(err => {
+          console.log(err);
           this.handle("Error with registration. Please try again.")
         });
       },
