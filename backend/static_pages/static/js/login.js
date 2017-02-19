@@ -25,6 +25,7 @@ window.onload = () => {
           this.authentication.error = "Please fill all fields."
           return;
         }
+        this.authentication.login.csrfmiddlewaretoken = docCookies.getItem("XSRF-TOKEN")
         this.customAxios({
           method: 'post',
           url: this.baseUrl + "rest-auth/login/",
@@ -43,6 +44,7 @@ window.onload = () => {
           this.authentication.error = "Please fill all fields."
           return;
         }
+        this.authentication.register.csrfmiddlewaretoken = docCookies.getItem("XSRF-TOKEN")
         this.customAxios({
           method: 'post',
           url: this.baseUrl + "rest-auth/registration",
