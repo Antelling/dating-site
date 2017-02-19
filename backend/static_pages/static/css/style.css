@@ -11,6 +11,7 @@ body {
 
 #title {
   font-size: 3rem;
+  margin-bottom: 0.5em;
 }
 
 #application {
@@ -51,13 +52,24 @@ body {
   border: thin solid #FFCDD2;
   border-radius: 2em;
   padding: 0.5em;
+  margin: 0.5em 0;
   font-size: 1.2em;
+  display: inline-block;
 }
 
 .stdButton:hover {
   cursor: hand;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
 
 
 

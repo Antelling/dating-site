@@ -9,13 +9,9 @@ window.onload = () => {
       authentication: {
         error: null,
         key: "",
-        csrf_token: "",
         register: {username: "",password1: "",password2: "",email: ""},
         login: {username: "",password: "",email: ""},
         displayLogin: true
-      },
-      user: {
-        username: ""
       },
       baseUrl: "http://localhost/"
     },
