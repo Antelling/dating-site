@@ -49,7 +49,7 @@ SITE_ID = 1
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_EXPOSE_HEADERS = ["X-CSRFToken"]
+CORS_EXPOSE_HEADERS = ["X-CSRFToken", "Set-Cookie"]
 
 from corsheaders.defaults import default_headers
 
