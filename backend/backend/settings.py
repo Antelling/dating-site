@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth',
     'rest_auth.registration',
-    'personality_test'
+    'personality_test',
+    'static_pages'
 ]
 
 SITE_ID = 1
