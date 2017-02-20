@@ -4,9 +4,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background: #F44336;
   color: #FFCDD2;
+  min-height: 100vh;
 }
 
 #title {
@@ -63,12 +63,24 @@ body {
   cursor: pointer;
 }
 
+#quiz {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.2);
+  font-size: 1.2em;
+}
 
+#quiz li {
+  display: flex;
+  justify-content: space-between;
+}
 
-
-
-
-
+#quiz select {
+  outline: none;
+  border: none;
+  background: rgba(255,255,255,0);
+  font-size: 0.9em;
+}
 
 
 
