@@ -36,7 +36,8 @@ def signup_user(request):
             location=request.POST.get("location"),
             first_name=request.POST.get("first_name"),
             last_name=request.POST.get("last_name"),
-            age=request.POST.get("age")
+            age=request.POST.get("age"),
+            has_taken_test=False
         )
         userprofile.save()
 
@@ -92,5 +93,6 @@ def user_info(request):
         "last_name": profile.last_name,
         "has_viewed_tutorial": profile.has_viewed_tutorial,
         "age": profile.age,
-        "paid_user": profile.paid_user
+        "paid_user": profile.paid_user,
+        "has_taken_test": profile.has_taken_test
     }))

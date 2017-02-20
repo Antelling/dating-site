@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import math
 from django.http import HttpResponse
+from django.contrib.auth.models import User
+from authentication.models import UserProfile
 
 
 def reverse(num):
@@ -13,6 +15,8 @@ def extract(num):
 
 # Create your views here.
 def five_parts(request):
+    user = User.objects.get(username=request.user.username)
+    profile = UserProfile.objects.get(user=user)
     map = [
         1, -2, 3, -4, 5,
         -1, 2, -3, 4, -5,
@@ -45,7 +49,8 @@ def five_parts(request):
             if negative:
                 question = reverse(question)
             key = map[key]
-            total[key] += question
+        profile.has_taken_test = True
+        profile.save()
         return HttpResponse(str(total))
     else:
         return HttpResponse(request.user.username)
