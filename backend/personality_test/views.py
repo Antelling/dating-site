@@ -10,7 +10,7 @@ def reverse(num):
 
 
 def extract(num):
-    return [num < 0, abs(num)]
+    return [num <= 0, abs(num)]
 
 
 # Create your views here.
