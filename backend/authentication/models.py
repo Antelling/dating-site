@@ -7,5 +7,11 @@ class UserProfile(models.Model):
     has_viewed_tutorial = models.BooleanField()
     paid_user = models.BooleanField()
 
+    location = models.TextField(max_length=9)
+    first_name = models.TextField(max_length=20)
+    last_name = models.TextField(max_length=20)
+
+    age = models.IntegerField()
+
     def __unicode__(self):
-        return self.user.username
+        return self.user.username + ": " + self.first_name + " " + self.last_name

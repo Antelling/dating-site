@@ -1,10 +1,7 @@
 #django modules
 django
-djangorestframework
 markdown
 django-filter
-django-allauth
-django_rest_auth
 django-cors-headers
 
 #ml
