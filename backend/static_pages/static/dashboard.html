@@ -17,6 +17,8 @@
       <div id="userInformation">
         <h1>Authenticated as {{ user.username }}</h1>
         <h1>Email: {{ user.email }}</h1>
+        <h1>ZIP: {{ user.location }}</h1>
+        <h1>Age: {{ user.age }}</h1>
       </div>
       <a class="stdButton" v-on:click="logOut">Log Out</a>
     </div>
