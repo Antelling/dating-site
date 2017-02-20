@@ -16,6 +16,7 @@
     <div id="application">
       <div id="userInformation">
         <h1>Authenticated as {{ user.username }}</h1>
+        <h1>Email: {{ user.email }}</h1>
       </div>
       <a class="stdButton" v-on:click="logOut">Log Out</a>
     </div>
