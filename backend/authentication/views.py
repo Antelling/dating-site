@@ -79,10 +79,18 @@ def is_username_available(request, url):
 
 
 def user_info(request):
+    owner = models.User.objects.get(username=request.user.username)
+    profile = UserProfile.objects.get(user=owner)
     return HttpResponse(json.dumps({
         "is_staff": request.user.is_staff,
         "is_superuser": request.user.is_superuser,
         "username": request.user.username,
         "is_active": request.user.is_active,
-        "email": request.user.email
+        "email": request.user.email,
+        "location": profile.location,
+        "first_name": profile.first_name,
+        "last_name": profile.last_name,
+        "has_viewed_tutorial": profile.has_viewed_tutorial,
+        "age": profile.age,
+        "paid_user": profile.paid_user
     }))
