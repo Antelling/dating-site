@@ -7,10 +7,7 @@ window.onload = () => {
         transformRequest:function(data) {var str = [];data.csrfmiddlewaretoken=docCookies.getItem("XSRF-TOKEN");for(var p in data) {if (data.hasOwnProperty(p) && data[p]) {str.push(encodeURIComponent(p) + "=" + encodeURIComponent(data[p]));}}return str.join("&");},
         headers: { "Content-Type" : "application/x-www-form-urlencoded" }
       }),
-      user: {
-        username: "",
-        email: ""
-      },
+      user: {},
       baseUrl: "http://localhost/"
     },
     mounted: function() {
@@ -19,8 +16,7 @@ window.onload = () => {
     methods: {
       getUserInformation: function() {
         this.customAxios.post(this.baseUrl + "api/auth/user_info/", {}).then(response => {
-          this.user.username = response.data.username;
-          this.user.email = response.data.email;
+          this.user = response.data;
         })
       },
       logOut: function() {
