@@ -47,6 +47,7 @@ def signup_user(request):
             print("logged in")
         else:
             return HttpResponse("error")
+        print('added user')
         return HttpResponseRedirect("/")
 
 
