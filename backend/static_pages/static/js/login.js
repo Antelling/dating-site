@@ -9,7 +9,7 @@ window.onload = () => {
       authentication: {
         error: null,
         key: "",
-        register: {username: "",password1: "",password2: "",email: ""},
+        register: {username: "",password: "",email: "", first_name: "", last_name: "", location: "", age: ""},
         login: {username: "",password: "",email: ""},
         displayLogin: true
       },
@@ -23,7 +23,7 @@ window.onload = () => {
         }
         this.customAxios({
           method: 'post',
-          url: this.baseUrl + "rest-auth/login/",
+          url: this.baseUrl + "api/auth/login/",
           data: this.authentication.login
         }).then(response => {
           this.authentication.error = null;
@@ -35,14 +35,16 @@ window.onload = () => {
         });
       },
       submitRegister: function() {
-        if (this.authentication.register.username.length == 0 || this.authentication.register.password1.length == 0
-          || this.authentication.register.password2.length == 0 || this.authentication.register.email.length == 0) {
+        if (this.authentication.register.username.length == 0 || this.authentication.register.password.length == 0
+          || this.authentication.register.email.length == 0 || this.authentication.register.first_name.length == 0
+          || this.authentication.register.last_name.length == 0 || this.authentication.register.location == ""
+          || this.authentication.register.age == "") {
           this.authentication.error = "Please fill all fields."
           return;
         }
         this.customAxios({
           method: 'post',
-          url: this.baseUrl + "rest-auth/registration",
+          url: this.baseUrl + "api/auth/registration",
           data: this.authentication.register
         }).then(response => {
           this.authentication.error = null;

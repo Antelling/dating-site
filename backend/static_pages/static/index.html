@@ -21,14 +21,16 @@
         <input type="text" v-model=" authentication.login.email "placeholder="Email">
       </div>
       <div v-if="!authentication.displayLogin" id="register" class="standardForm" v-on:keyup.enter="submitRegister">
-        <input type="text" placeholder="Full Name">
+        <div class="splitForm">
+          <input type="text" v-model=" authentication.register.first_name" placeholder="First Name">
+          <input type="text" v-model=" authentication.register.last_name" placeholder="Last Name">
+        </div>
         <input type="text" v-model=" authentication.register.username "placeholder="Username">
-        <input type="password" v-model=" authentication.register.password1 "placeholder="Password">
-        <input type="password" v-model=" authentication.register.password2 "placeholder="Password">
+        <input type="password" v-model=" authentication.register.password "placeholder="Password">
         <input type="text" v-model=" authentication.register.email "placeholder="Email">
         <div class="splitForm">
-          <input type="number" placeholder="ZIP"></input>
-          <input type="number" placeholder="Age"></input>
+          <input type="number" placeholder="ZIP" v-model=" authentication.register.location "></input>
+          <input type="number" placeholder="Age" v-model=" authentication.register.age "></input>
         </div>
       </div>
       <a class="stdButton" v-if="authentication.displayLogin" v-on:click="authentication.displayLogin = !authentication.displayLogin">or Register</a>
