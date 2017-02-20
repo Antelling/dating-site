@@ -40,10 +40,9 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'allauth',
     'allauth.account',
-    'rest_auth',
-    'rest_auth.registration',
     'personality_test',
-    'static_pages'
+    'static_pages',
+    'authentication'
 ]
 
 SITE_ID = 1
