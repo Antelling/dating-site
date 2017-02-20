@@ -1,7 +1,7 @@
 from django.shortcuts import *
 from django.contrib.auth import *
 from django.contrib.auth import models
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidden
 from .models import UserProfile
 import json
 
@@ -21,6 +21,9 @@ def signup_user(request):
         return render(request, "authentication/signup.html", {'user': False})
 
     elif request.method == "POST":
+        if len(request.POST.get("password")) < 6:
+            return HttpResponseForbidden("password must be at least 6 characters")
+
         models.User.objects.create_user(
             request.POST.get("username"),
             request.POST.get("email"),
