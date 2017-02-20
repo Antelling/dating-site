@@ -3,7 +3,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/rest-auth/', include('authentication.urls')),
+    url(r'^api/auth/', include('authentication.urls')),
     url(r'^api/personality_test/', include('personality_test.urls')),
     url(r'^api/', include('static_pages.urls')),
 ]
