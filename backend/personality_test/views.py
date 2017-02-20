@@ -10,7 +10,7 @@ def reverse(num):
 
 
 def extract(num):
-    return [False if num > 0 else True, num if num > 0 else -1 * num]
+    return [num < 0, abs(num)]
 
 
 # Create your views here.
@@ -45,13 +45,11 @@ def five_parts(request):
     }
     if request.POST.__contains__("data"):
         for i, question in enumerate(request.POST.get("data")):
-            print(i, question)
             negative, key = extract(smap[i])
-            print(negative, key)
             if negative:
                 question = reverse(int(question))
             key = map[str(key)]
-            total[key] = total[key] + 1
+            total[key]+=negative
         profile.has_taken_test = True
         profile.save()
         return HttpResponse(str(total))
