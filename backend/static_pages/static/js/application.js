@@ -18,13 +18,13 @@ window.onload = () => {
     },
     methods: {
       getUserInformation: function() {
-        this.customAxios.post(this.baseUrl + "user_info/", {}).then(response => {
+        this.customAxios.post(this.baseUrl + "api/auth/user_info/", {}).then(response => {
           this.user.username = response.data.username;
           this.user.email = response.data.email;
         })
       },
       logOut: function() {
-        this.customAxios.post(this.baseUrl + "rest-auth/logout/", {}).then(() => {
+        this.customAxios.post(this.baseUrl + "api/auth/logout/", {}).then(() => {
           window.location = this.baseUrl;
         }).catch(err => {
           window.location = this.baseUrl;
