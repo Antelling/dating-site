@@ -32,7 +32,7 @@ window.onload = () => {
         this.authentication.error = err;
       },
       submitQuiz: function() {
-        this.customAxios.post(this.baseUrl + "api/personality_test/", {"data": this.answers.join(",")}).then(response => {
+        this.customAxios.post(this.baseUrl + "api/personality_test/", {"data": this.answers.join("")}).then(response => {
           console.log(response);
         }).catch(err => {
           console.log(response);

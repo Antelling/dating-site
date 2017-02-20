@@ -17,7 +17,7 @@ def extract(num):
 def five_parts(request):
     user = User.objects.get(username=request.user.username)
     profile = UserProfile.objects.get(user=user)
-    map = [
+    smap = [
         1, -2, 3, -4, 5,
         -1, 2, -3, 4, -5,
         1, -2, 3, -4, 5,
@@ -45,10 +45,13 @@ def five_parts(request):
     }
     if request.POST.__contains__("data"):
         for i, question in enumerate(request.POST.get("data")):
-            negative, key = extract(map[i])
+            print(i, question)
+            negative, key = extract(smap[i])
+            print(negative, key)
             if negative:
-                question = reverse(question)
-            key = map[key]
+                question = reverse(int(question))
+            key = map[str(key)]
+            total[key] = total[key] + 1
         profile.has_taken_test = True
         profile.save()
         return HttpResponse(str(total))
