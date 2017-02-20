@@ -33,8 +33,7 @@
           <input type="number" placeholder="Age" v-model=" authentication.register.age "></input>
         </div>
       </div>
-      <a class="stdButton" v-if="authentication.displayLogin" v-on:click="authentication.displayLogin = !authentication.displayLogin">or Register</a>
-      <a class="stdButton" v-if="!authentication.displayLogin" v-on:click="authentication.displayLogin = !authentication.displayLogin">or Login</a>
+      <a class="stdButton" v-on:click="authentication.displayLogin = !authentication.displayLogin">or {{ authentication.displayLogin ? "Register" : "Login"}}</a>
     </div>
   </body>
 </html>

@@ -43,8 +43,8 @@ def five_parts(request):
         "emotional_stability": 0,
         "imagination": 0
     }
-    if "response" in request.POST:
-        for i, question in enumerate(request.POST.response):
+    if request.POST.__contains__("data"):
+        for i, question in enumerate(request.POST.get("data")):
             negative, key = extract(map[i])
             if negative:
                 question = reverse(question)

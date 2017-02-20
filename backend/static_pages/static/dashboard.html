@@ -14,7 +14,13 @@
   <body>
     <h1 id="title">Dating-Site</h1>
     <div id="application">
-      <personality-quiz id="quiz" v-bind:list="questions"></personality-quiz>
+      <ul id="quiz">
+        <li v-for='(item, index) in questions'>
+          <p>{{index + 1}}. {{item}}</p>
+          <select v-model="answers[index]"><option value='1'>Very Inaccurate</option><option value='2'>Moderately Inaccurate</option><option value='3'>Neither Accurate nor Inaccurate</option><option value='4'>Moderately Accurate</option><option value='5'>Very Accurate</option></select>
+        </li>
+      </ul>
+      <a class="stdButton" v-on:click="submitQuiz">Submit Quiz</a>
       <div id="userInformation">
         <h1>Authenticated as {{ user.username }}</h1>
         <h1>Email: {{ user.email }}</h1>
