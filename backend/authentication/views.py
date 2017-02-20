@@ -24,7 +24,7 @@ def signup_user(request):
         models.User.objects.create_user(
             request.POST.get("username"),
             request.POST.get("email"),
-            request.POST.get("password1")
+            request.POST.get("password")
         )
         userprofile = UserProfile(
             has_viewed_tutorial=False,
@@ -37,7 +37,7 @@ def signup_user(request):
         )
         userprofile.save()
 
-        user = authenticate(username=request.POST.get("username"), password=request.POST.get("password1"))
+        user = authenticate(username=request.POST.get("username"), password=request.POST.get("password"))
 
         if user is not None:
             login(request, user)
